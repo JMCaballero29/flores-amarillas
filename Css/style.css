@@ -1,0 +1,169 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Inclusive Sans', sans-serif;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 6rem; /* Ajuste relativo */
+    color: white; /* Color para visibilidad */
+}
+
+.Con-2 {
+    display: none; /* Inicialmente oculto */
+}
+
+/* Canvas */
+canvas {
+    display: block;
+    width: 90%; /* Ajuste relativo para pantallas pequeñas */
+    max-width: 600px;
+    height: auto;
+}
+
+/* Contenedor central */
+.Contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Centrado vertical */
+    margin: 0;
+}
+
+.Con {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Texto */
+.Texto {
+    display:flex; /* Oculto por defecto */
+}
+
+.Texto h2 {
+    font-size: 3rem; /* Ajuste relativo */
+    color: white;
+}
+
+/* Estilos para botones */
+.Button {
+    font-family: monospace;
+    font-size: 1.5rem; /* Ajuste relativo */
+    transition-duration: 0.2s;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: yellow; 
+    color: black; 
+    border: 2px solid yellow;
+    cursor: pointer;
+    margin-top: 10px; /* Espacio entre botones */
+}
+
+.Button:hover {
+    transform: scale(1.1);
+    border-radius: 14px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: black;
+    background-color: white;
+}
+
+/* Contenedor del botón de inicio */
+.Contenedor-Binicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Centrado vertical */
+    margin-top: 10px;
+}
+
+/* Contenedor emergente */
+.Con-Emergente {
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    display: flex;
+}
+
+/* Cuadro emergente */
+.cua {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Centrado */
+    width: 300px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: aparecer 0.5s ease-out;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+/* Media queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4rem; /* Reducción de tamaño en pantallas más pequeñas */
+    }
+
+    .Texto h2 {
+        font-size: 2.5rem; /* Ajuste en el tamaño de texto */
+        color: white;
+        text-align: center;
+    }
+
+    .Button {
+        font-size: 1.25rem; /* Ajuste relativo para botones */
+        padding: 8px; /* Ajustar padding para pantallas más pequeñas */
+    }
+
+    canvas {
+        width: 95%; /* Aumentar el ancho del canvas en pantallas pequeñas */
+    }
+}
+
+/* Media queries para dispositivos muy pequeños (celulares) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3rem; /* Ajustar título para móviles */
+    }
+
+    .Texto h2 {
+        font-size: 2rem; /* Ajustar el tamaño del texto */
+        color: white;
+    }
+
+    .Button {
+        font-size: 1rem; /* Reducción del tamaño de fuente */
+        padding: 6px; /* Ajuste del padding */
+    }
+
+    canvas {
+        width: 100%; /* Canvas toma todo el ancho en móviles */
+    }
+}
